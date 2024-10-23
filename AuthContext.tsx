@@ -44,6 +44,23 @@ export const AuthContextProvider = ({
     login,
     logout,
 };
+  const { login } = useAuth();
+  
+  // 用戶同時擁有 "U" 和 "M" 身份
+  login("user@example.com", ["U", "M"]);
+  
+  // 或者只擁有單一身份
+  login("admin@example.com", ["M"]);
+
+  const { account } = useAuth();
+  
+  if (account.roles.includes("M")) {
+    console.log("該用戶是管理員");
+  }
+  
+  if (account.roles.includes("U")) {
+    console.log("該用戶是一般用戶");
+  }
 
   return (
     <AuthContext.Provider value={value}>
