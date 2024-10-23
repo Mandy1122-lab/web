@@ -2,34 +2,45 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { useRouter } from 'next/navigation';  // 使用 Next.js 的 useRouter
+import { useRouter } from 'next/navigation';  
 
 export default function Login() {
   const [account, setAccount] = useState({ email: "", password: "" });
   const auth = useAuth();
-  const router = useRouter();  // 初始化 router
+  const router = useRouter();  
 
   const handleClick = function (e: React.ChangeEvent<HTMLInputElement>) {
     setAccount({ ...account, [e.target.name]: e.target.value });
   };
 
+  const adminEmails = [
+    "a1@gmail.com",
+    "a2@gmail.com",
+    "a3@gmail.com"
+  ];
+
+  const userEmails = [
+    "u1@gmail.com",
+    "u2@gmail.com"
+  ];
+
   const login = function () {
     let roles: string[] = [];
-    if (account.email === "admin@example.com") {
-      roles = ["M"]; // 管理員身份
-    } else if (account.email === "user@example.com") {
-      roles = ["U"]; // 一般用戶身份
+    if (adminEmails.includes(account.email)) {
+      roles = ["M"]; 
+    } else if (userEmails.includes(account.email)) {
+      roles = ["U"]; 
     }
 
-    auth.login(account.email, roles);  // 呼叫 AuthContext 內的 login 函數
+    auth.login(account.email, roles);  
 
-    // 根據不同的 roles 導向不同的頁面
+
     if (roles.includes("M")) {
-      router.push('admin');  // 導向管理員頁面
+      router.push('admin');  
     } else if (roles.includes("U")) {
-      router.push('user');  // 導向一般用戶頁面
+      router.push('user');  
     } else {
-      router.push('/');  // 預設導向主頁面
+      router.push('/');  
     }
   };
 
