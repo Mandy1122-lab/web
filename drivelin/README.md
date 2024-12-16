@@ -1,3 +1,3 @@
-fast/config/firebase-adminsdk.json
+fast/routers/serviceAccount.json
 
 next/.env.local
