@@ -26,7 +26,7 @@ class Spot(BaseModel):
     s_intro: str
     imageUrl: str | None = None  # 景點圖片
     coverUrls: list[str] = []  # 劇照圖片 URL 列表
-    s_tag: liat[str] = []
+    s_tag: list[str] = []  # 標籤字段，這裡將其設為列表類型
 
 # --- 取得所有景點 ---
 @router.get("/")
