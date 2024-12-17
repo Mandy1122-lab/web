@@ -1,0 +1,49 @@
+/* DisplayItemsSection.module.css */
+.displayItemsSection {
+    width: 70vw;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .displayItemsTitle {
+    font-size: 2rem;
+    color: #000;
+    text-align: left;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .displayItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 五個等寬列 */
+    gap: 30px;
+  }
+  
+  .displayItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .displayItemImage {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* 固定比例 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .displayItemName {
+    font-size: 1.2rem;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    height: 60px; /* 固定文字容器高度 */
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+  }
+  

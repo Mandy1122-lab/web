@@ -1,0 +1,49 @@
+/* 熱門景點樣式 */
+.hotspotSection {
+  width: 70vw;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.hotspotTitle {
+  font-size: 2rem;
+  color: #000;
+  text-align: left;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.noData {
+  font-size: 1.5rem;
+  color: var(--foreground);
+}
+
+/* 圖片與文字容器 */
+.hotspotContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 四個等寬列 */
+  gap: 50px;
+}
+
+.hotspotItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspotImage {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+
+.hotspotName {
+  font-size: 1.2rem;
+  color: #000;
+  text-align: center;
+  margin-top: 10px;
+}
