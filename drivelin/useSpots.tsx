@@ -15,6 +15,7 @@ export default function useSpot() {
     coverUrls: string[]; // 增加劇照圖片的支持
     hours: string;
     tel: string;
+    s_tag:string[];
   }[]>([]);
 
   // 讀取景點
@@ -41,6 +42,7 @@ export default function useSpot() {
     coverUrls: string[]; // 加入劇照圖片 URL
     hours: string;
     tel: string;
+    s_tag:string[];
   }) => {
     try {
       const response = await fetch(`${API_URL}/spot/`, {
@@ -77,6 +79,7 @@ export default function useSpot() {
     coverUrls: string[]; // 更新劇照圖片 URL
     hours: string;
     tel: string;
+    s_tag:string[];
   }) => {
     try {
       const response = await fetch(`${API_URL}/spot/${id}`, {
