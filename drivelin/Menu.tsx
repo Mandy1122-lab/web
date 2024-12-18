@@ -20,8 +20,8 @@ export default function Menu() {
     <AppBar position="static">
       <Toolbar>
         <Button color="inherit" variant={pathname === "/" ? "outlined" : "text"} onClick={() => router.push("/")}>首頁</Button>
-        <Button color="inherit" variant={pathname === "/product" ? "outlined" : "text"} onClick={() => router.push("/product")}>最新</Button>
-        <Button color="inherit" variant={pathname === "/spot_end" ? "outlined" : "text"} onClick={() => router.push("/spot_end")}>景點分類</Button>
+        <Button color="inherit" variant={pathname === "/newest" ? "outlined" : "text"} onClick={() => router.push("/newest")}>最新</Button>
+        <Button color="inherit" variant={pathname === "/spot" ? "outlined" : "text"} onClick={() => router.push("/spot")}>景點分類</Button>
 
         <Box sx={{ flexGrow: 1 }} />  {/* 用於分隔按鈕與搜尋框 */}
 
