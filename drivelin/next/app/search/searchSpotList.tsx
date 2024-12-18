@@ -13,7 +13,7 @@ interface SearchSpotListProps {
   isQueried: boolean;
 }
 
-export default function searchSpotList({ spots, isQueried }: SearchSpotListProps) {
+export default function SearchSpotList({ spots, isQueried }: SearchSpotListProps) {
   return (
     <Container maxWidth="sm">
       <Box>
