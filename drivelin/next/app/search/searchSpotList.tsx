@@ -52,8 +52,6 @@ export default function SearchSpotList({ spots }: { spots: Spot[] }) {
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" gutterBottom>
-        <br> 
-        <br> 
         搜尋結果
       </Typography>
       {spots.length > 0 ? (
