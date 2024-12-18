@@ -18,20 +18,20 @@ export default function Home() {
     setError('');
     setLoading(true);
     setIsQueried(true); 
-
     try {
-      const response = await fetch(`/search?query=${searchQuery}`);
+      const response = await fetch(`http://localhost:8000/search?q=${searchQuery}`);
       if (!response.ok) {
-        throw new Error('無法獲取搜尋結果');
+        // 檢查錯誤回應內容
+        const errorText = await response.text();
+        throw new Error(`伺服器回應錯誤: ${errorText}`);
       }
       const data = await response.json();
       setFilteredSpots(data);
     } catch (err) {
-      setError();
+      setError(`搜尋失敗: ${err.message}`);
       console.error(err);
-    } finally {
-      setLoading(false);
     }
+    
   };
 
   return (
@@ -57,7 +57,6 @@ export default function Home() {
 
       {error && <p className={styles['error-message']}>{error}</p>}
 
-      {loading && <p>載入中...</p>}
 
       <SearchSpotList spots={filteredSpots} isQueried={isQueried} /> {}
     </div>
